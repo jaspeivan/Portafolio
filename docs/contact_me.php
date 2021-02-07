@@ -1,5 +1,14 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+
+/*
+
 if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['message']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
   http_response_code(500);
   exit();
@@ -39,7 +48,7 @@ try {
     //Recipients
     $mail->setFrom('jaspeivan1@gmail.com',"Portafolio");
     $mail->addAddress('jaspeivan1@gmail.com');     // Add a recipient
-   /* $mail->addAddress('ellen@example.com');               // Name is optional
+    $mail->addAddress('ellen@example.com');               // Name is optional
     $mail->addReplyTo('info@example.com', 'Information');
     $mail->addCC('cc@example.com');
     $mail->addBCC('bcc@example.com');*/
@@ -49,6 +58,8 @@ try {
     //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
     // Content
+    // 
+    /*
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Contacto de Portafolio';
     $mail->Body    =  $body;
@@ -64,7 +75,12 @@ try {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 
-/*// Check for empty fields
+*/
+
+
+
+
+// Check for empty fields
 if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['message']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
   http_response_code(500);
   exit();
@@ -76,14 +92,14 @@ $phone = strip_tags(htmlspecialchars($_POST['phone']));
 $message = strip_tags(htmlspecialchars($_POST['message']));
 
 // Create the email and send the message
-$to = "noreply@gmail.com"; // Add your email address in between the "" replacing yourname@yourdomain.com - This is where the form will send a message to.
+$to = "jaspeivan1@gmail.com"; // Add your email address in between the "" replacing yourname@yourdomain.com - This is where the form will send a message to.
 $subject = "Website Contact Form:  $name";
 $body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email\n\nPhone: $phone\n\nMessage:\n$message";
-$header = "From: noreply@gmail.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+$header = "From: jaspeivan1@gmail.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 $header .= "Reply-To: $email";	
 
 if(mail($to, $subject, $body, $header))
-  http_response_code(500);*/
+  http_response_code(500);
 
 
 
