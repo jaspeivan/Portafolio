@@ -7,7 +7,6 @@ require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 
-/*
 
 if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['message']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
   http_response_code(500);
@@ -23,12 +22,6 @@ $message = strip_tags(htmlspecialchars($_POST['message']));
 $body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email\n\nPhone: $phone\n\nMessage:\n$message";
 
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require 'PHPMailer/Exception.php';
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
 
 
 // Instantiation and passing `true` enables exceptions
@@ -48,10 +41,10 @@ try {
     //Recipients
     $mail->setFrom('jaspeivan1@gmail.com',"Portafolio");
     $mail->addAddress('jaspeivan1@gmail.com');     // Add a recipient
-    $mail->addAddress('ellen@example.com');               // Name is optional
-    $mail->addReplyTo('info@example.com', 'Information');
-    $mail->addCC('cc@example.com');
-    $mail->addBCC('bcc@example.com');*/
+    //$mail->addAddress('ellen@example.com');               // Name is optional
+    //$mail->addReplyTo('info@example.com', 'Information');
+    //$mail->addCC('cc@example.com');
+    //$mail->addBCC('bcc@example.com');
 
     // Attachments
     //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
@@ -59,7 +52,7 @@ try {
 
     // Content
     // 
-    /*
+    
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Contacto de Portafolio';
     $mail->Body    =  $body;
@@ -71,15 +64,16 @@ try {
     echo '<script>alert("El Mensaje se ha enviado Correctamente");
      window.history.go(-1);
     </script>';
+
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 
-*/
 
 
 
 
+/*
 // Check for empty fields
 if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['message']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
   http_response_code(500);
@@ -99,9 +93,10 @@ $header = "From: jaspeivan1@gmail.com\n"; // This is the email address the gener
 $header .= "Reply-To: $email";	
 
 if(mail($to, $subject, $body, $header))
+$mail->send();
   http_response_code(500);
 
 
-
+*/
 
 ?>
