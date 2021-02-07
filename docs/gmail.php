@@ -36,7 +36,8 @@ try {
     $mail->Username   = 'jaspeivan1@gmail.com';                     // SMTP username
     $mail->Password   = 'ivan25213024';                               // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+    $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+    $mail->SMTPSecure = 'tls';
 
     //Recipients
     $mail->setFrom('jaspeivan1@gmail.com',"Portafolio");
