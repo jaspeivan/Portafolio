@@ -37,7 +37,7 @@ try {
     $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     //Recipients
-    $mail->setFrom('jaspeivan1@gmail.com', 'Pedro');
+    $mail->setFrom('jaspeivan1@gmail.com',"Portafolio");
     $mail->addAddress('jaspeivan1@gmail.com');     // Add a recipient
    /* $mail->addAddress('ellen@example.com');               // Name is optional
     $mail->addReplyTo('info@example.com', 'Information');
@@ -53,6 +53,8 @@ try {
     $mail->Subject = 'Contacto de Portafolio';
     $mail->Body    =  $body;
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    //$main->CharSet = 'UTF-8';
+
 
     $mail->send();
     echo '<script>alert("El Mensaje se ha enviado Correctamente");
@@ -63,12 +65,6 @@ try {
 }
 
 /*// Check for empty fields
-if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['message']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-  http_response_code(500);
-  exit();
-}
-
-/// Check for empty fields
 if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['message']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
   http_response_code(500);
   exit();
